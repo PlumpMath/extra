@@ -225,7 +225,7 @@ void SG_CALL sgeCaveDrawDBG(SGECave* cave, float cell, SGbool border)
     for(i = !border; i < cave->width + 1 + border; i++)
         for(j = !border; j < cave->height + 1 + border; j++)
             if(cave->grid[cave->curr][i][j])
-                sgDrawRectangleWH(i * cell, j * cell, cell, cell, SG_TRUE);
+                sgDrawRectangle2fWH(i * cell, j * cell, cell, cell, SG_TRUE);
 }
 void SG_CALL sgeCaveDrawGrayDBG(SGECave* cave, float cell, SGbool border)
 {
@@ -238,7 +238,7 @@ void SG_CALL sgeCaveDrawGrayDBG(SGECave* cave, float cell, SGbool border)
             if(cave->grid[cave->curr][i][j])
             {
                 sgDrawColor2f(1.0 - cave->gridf[i][j], 0.25);
-                sgDrawRectangleWH(i * cell, j * cell, cell, cell, SG_TRUE);
+                sgDrawRectangle2fWH(i * cell, j * cell, cell, cell, SG_TRUE);
             }
         }
     }
@@ -253,7 +253,7 @@ void sgeCaveDrawSetsDBG(SGECave* cave, SGColor base, float cell, SGbool border)
             if(cave->set[i][j])
             {
                 sgDrawColor4f(base.r, base.g, base.b, base.a * (cave->set[i][j] / (float)cave->setnum));
-                sgDrawRectangleWH(i * cell, j * cell, cell, cell, SG_TRUE);
+                sgDrawRectangle2fWH(i * cell, j * cell, cell, cell, SG_TRUE);
             }
         }
     }
